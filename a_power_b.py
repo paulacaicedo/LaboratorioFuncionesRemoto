@@ -1,19 +1,23 @@
-
-
-
 def a_power_b(a,b):
-    while True:
-        if a!=0:
-            prod=1
-            for i in range(1,b+1):
-                prod=prod*a
-            print("El resultado de la potencia es: ",prod)
-            a = int(input("Introduzca un valor: "))
-            b = int(input("Introduzca la potencia: "))
-        else:
+    prod=1
+    for i in range(1,b+1):
+        prod=prod*a
+        if i > 63:
+            raise ValueError('El numero es muy grande')
+            break
+    return prod
+
+while True:
+    try:
+        a = int(input("Introduzca un valor: "))
+
+        if a == 0:
             break
 
-a=int(input("Introduzca un valor: "))
-b=int(input("Introduzca la potencia: "))
+        b = int(input("Introduzca la potencia: "))
 
-a_power_b(a,b)
+        res = a_power_b(a, b)
+        print("El resultado es ",res)
+
+    except:
+        print("Tiene un error!!!")
