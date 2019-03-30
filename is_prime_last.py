@@ -20,7 +20,6 @@ while True:
         res=is_prime(a)
         if res==0:
             print(0)
-            can+=1
         else:
             res == 1
             print(1)
